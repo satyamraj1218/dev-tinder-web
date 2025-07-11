@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { removeUser } from "../utils/userSlice";
+import { removeFeed } from "../utils/feedSlice";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -18,6 +19,7 @@ const NavBar = () => {
         { withCredentials: true }
       );
       dispatch(removeUser());
+      dispatch(removeFeed());
       return navigate("/login");
     } catch (err) {
       //TODO: Handle error - create an error page
