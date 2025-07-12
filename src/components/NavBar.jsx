@@ -30,9 +30,18 @@ const NavBar = () => {
   return (
     <div className="navbar bg-base-200 shadow-sm">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl">
-          devTinder
-        </Link>
+        <div className="flex row-auto">
+          <Link to="/">
+            <img
+              className="w-16 h-16 mx-4"
+              src="https://img.freepik.com/free-vector/creative-gradient-code-logo_23-2148820572.jpg?semt=ais_hybrid&w=740"
+              alt="logo"
+            ></img>
+          </Link>
+          <Link to="/" className="btn btn-ghost text-xl">
+            devTinder
+          </Link>
+        </div>
       </div>
       {user && (
         <div className="flex gap-2">

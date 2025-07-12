@@ -3,11 +3,11 @@ import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
-  const [emailId, setEmailId] = useState("satyam@email.com");
-  const [password, setPassword] = useState("Satyam@123");
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,9 +41,9 @@ const Login = () => {
             />
           </fieldset>
           <fieldset className="fieldset">
-            <legend className="fieldset-legend">Password</legend>
+            <legend className="fieldset-legend">Password:</legend>
             <input
-              type="text"
+              type="password"
               value={password}
               className="input"
               placeholder="Enter your password"
@@ -56,6 +56,12 @@ const Login = () => {
               Login
             </button>
           </div>
+          <p>
+            New User?{" "}
+            <Link to="/signup" className="text-blue-500 underline">
+              SignUp Here
+            </Link>
+          </p>
         </div>
       </div>
     </div>

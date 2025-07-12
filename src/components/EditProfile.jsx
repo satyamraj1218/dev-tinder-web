@@ -9,10 +9,10 @@ const EditProfile = ({ user }) => {
   if (!user) return <div>Loading...</div>;
   const [firstName, setFirstName] = useState(user?.firstName);
   const [lastName, setLastName] = useState(user?.lastName);
-  const [age, setAge] = useState(user?.age);
-  const [imageUrl, setImageUrl] = useState(user?.imageUrl);
-  const [about, setAbout] = useState(user?.about);
-  const [gender, setGender] = useState(user?.gender);
+  const [age, setAge] = useState(user?.age || "");
+  const [imageUrl, setImageUrl] = useState(user?.imageUrl || "");
+  const [about, setAbout] = useState(user?.about || "");
+  const [gender, setGender] = useState(user?.gender || "");
   const [error, setError] = useState("");
   const [showToast, setShowToast] = useState(false);
   const dispatch = useDispatch();
